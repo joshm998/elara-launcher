@@ -20,10 +20,6 @@ Requires:       gtk4
 %description
 Elara Launcher is a GTK4-based launcher written in Rust.
 
-%prep
-%setup -q -c -T
-cp -r %{_sourcedir}/* .
-
 %build
 make build-release %{?_smp_mflags}
 
