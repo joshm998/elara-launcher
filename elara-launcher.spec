@@ -5,7 +5,6 @@ Summary:        Elara Launcher
 
 License:        MIT
 URL:            https://github.com/joshm998/elara-launcher
-Source0:        https://github.com/joshm998/elara-launcher/archive/refs/tags/v%{version}.tar.gz
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -22,7 +21,8 @@ Requires:       gtk4
 Elara Launcher is a GTK4-based launcher written in Rust.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -c -T
+cp -r %{_sourcedir}/* .
 
 %build
 make build-release %{?_smp_mflags}
